@@ -64,4 +64,10 @@ const config = {
   },
 };
 
+export const paragonTheme = {
+	primaryColor: '#1a73e8',
+	secondaryColor: '#ff5722',
+	fontFamily: 'Poppins, sans-serif',
+};
+
 export default config;

@@ -16,11 +16,11 @@ $(document).ready(function() {
       const theme = $.cookie(themeCookie);
       $("#toggle-switch-input").prop("checked", theme === 'dark');
     }
-    
+
     function toggleTheme(){
       const themeValue = $.cookie(themeCookie) === 'dark' ? 'light' : 'dark';
       $.cookie(themeCookie, themeValue, { domain: window.location.hostname, expires: 90, path: '/' });
-        
+
       applyThemeOnPage();
     }
 

@@ -2,8 +2,33 @@
 section.home {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 0 15px;
 }
+
+section.home.style-logout {
+  min-height: calc(100vh - 64px);
+  background-image: url('https://framerusercontent.com/images/wSzvTT1ZyGcTOhxUVQOg97dmudM.png?scale-down-to=4096');
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.heading-group {
+  text-align: center;
+  > p {
+    font-size: clamp(1.3rem,4vw,2rem);
+    line-height: 1.2;
+  }
+  > h1 {
+    font-weight: 900;
+    font-size: clamp(2rem,5vw,3rem);
+  }
+}
+
 .home>header .title {
     background: none !important;
 }
@@ -206,4 +231,13 @@ body.indigo-dark-theme {
             }
         }
     }
+}
+
+.custom-title {
+  font-size: 2rem;
+  background-color: red;
+  color: white;
+  transform: translate(0px, 20px) skewX(345deg);
+  max-width: 50%;
+  margin: 0 auto;
 }
