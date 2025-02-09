@@ -85,6 +85,10 @@
         dir=${bidi}
       % endif
     >
+    <div class="footer-info">
+      <p class="footer-info__title">Transform your learning experience with digital innovation and accessible educational tools.</p>
+      <img src="https://framerusercontent.com/images/Stg2MbBJu6H33msTYjGtKvICk.png" alt="tutor logo">
+    </div>
     <div class="footer-top">
       <div class="powered-area">
         ## Please leave this link and use one of the logos provided
@@ -112,6 +116,7 @@
             {% for link in INDIGO_FOOTER_NAV_LINKS %}
             <li>
               <a href="{{ link['url'] }}">{{ link['title'] }}</a>
+              <img src="{{ link['icon'] }}" alt="icon for link">
             </li>
             {% endfor %}
         </ol>

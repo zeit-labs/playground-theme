@@ -19,7 +19,7 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
     # Add here your new settings
     "defaults": {
         "VERSION": __version__,
-        "WELCOME_MESSAGE": "The place for all your online learning",
+        "WELCOME_MESSAGE": "we build flexible & scalable online learning platforms",
         "PRIMARY_COLOR": "#15376D",  # Indigo
         "SECONDARY_COLOR": "#FF5722",
         "ENABLE_DARK_TOGGLE": True,
@@ -27,13 +27,13 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         # To remove all links, run:
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
         "FOOTER_NAV_LINKS": [
-            {"title": "About Us", "url": "/about"},
-            {"title": "Blog", "url": "/blog"},
-            {"title": "Donate", "url": "/donate"},
-            {"title": "Terms of Service", "url": "/tos"},
-            {"title": "Privacy Policy", "url": "/privacy"},
-            {"title": "Help", "url": "/help"},
-            {"title": "Contact Us", "url": "/contact"},
+            {"title": "Twitter","icon":"https://framerusercontent.com/images/1DbJF0SfnQ9zXbkklF5ahXsA3E.svg", "url": "https://x.com/zeitlabshq"},
+            {"title": "Instagram","icon":"https://framerusercontent.com/images/ywXPggRz1sA205mpu4DgptHmGkg.svg", "url": "https://www.instagram.com/"},
+            {"title": "LinkedIn","icon":"https://framerusercontent.com/images/AKICGggo8HHzKzhGGi2gPugc.png", "url": "https://www.linkedin.com/company/zeitlabs-elearning/"},
+            # {"title": "Terms of Service", "url": "/tos"},
+            # {"title": "Privacy Policy", "url": "/privacy"},
+            # {"title": "Help", "url": "/help"},
+            # {"title": "Contact Us", "url": "/contact"},
         ],
     },
     "unique": {},
@@ -193,6 +193,43 @@ dark_theme_filepath = ['indigo/js/dark-theme.js']
 for filename in javascript_files:
     if filename in PIPELINE['JAVASCRIPT']:
         PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += dark_theme_filepath
+
+MFE_CONFIG['INDIGO_ENABLE_DARK_TOGGLE'] = {{ INDIGO_ENABLE_DARK_TOGGLE }}
+""",
+        ),
+        (
+            "openedx-lms-production-settings",
+            """
+MFE_CONFIG['INDIGO_ENABLE_DARK_TOGGLE'] = {{ INDIGO_ENABLE_DARK_TOGGLE }}
+""",
+        ),
+    ]
+)
+
+hooks.Filters.ENV_PATCHES.add_items(
+    [
+        # for production
+        (
+            "openedx-common-assets-settings",
+            """
+javascript_files = ['base_application', 'application', 'certificates_wv']
+custom_js_filepath = ['indigo/js/app.js']
+
+for filename in javascript_files:
+    if filename in PIPELINE['JAVASCRIPT']:
+        PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += custom_js_filepath
+""",
+        ),
+        # for development
+        (
+            "openedx-lms-development-settings",
+            """
+javascript_files = ['base_application', 'application', 'certificates_wv']
+custom_js_filepath = ['indigo/js/app.js']
+
+for filename in javascript_files:
+    if filename in PIPELINE['JAVASCRIPT']:
+        PIPELINE['JAVASCRIPT'][filename]['source_filenames'] += custom_js_filepath
 
 MFE_CONFIG['INDIGO_ENABLE_DARK_TOGGLE'] = {{ INDIGO_ENABLE_DARK_TOGGLE }}
 """,

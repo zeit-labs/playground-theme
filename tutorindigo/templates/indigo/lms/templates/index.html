@@ -8,7 +8,7 @@ from django.urls import reverse
 from openedx.core.djangolib.markup import HTML, Text
 %>
 
-<main id="main" aria-label="Content" tabindex="-1">
+<main class="home-page" id="main" aria-label="Content" tabindex="-1">
     <section class="home style-logout">
       <div class="hero">
         <div class="outer-wrapper">
@@ -47,8 +47,43 @@ from openedx.core.djangolib.markup import HTML, Text
         </div>
 
       </div>
-      <%include file="${courses_list}" />
 
+    </section>
+
+    <section class="section-courses">
+      <h2 class="section-title">Our courses</h2>
+        <%include file="${courses_list}" />
+    </section>
+
+    <section id="faq-section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div id="faq-container">
+        <div class="faq-item">
+          <h3 class="faq-question">What is Zeit Labs?</h3>
+          <p class="faq-answer">Zeit Labs is an online platform offering flexible and scalable learning solutions.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">How can I enroll in a course?</h3>
+          <p class="faq-answer">Simply click on the "Enroll Now" button on the course you are interested in.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-question">Do you offer certificates?</h3>
+          <p class="faq-answer">Yes, certificates are provided upon successful course completion.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-newsletter">
+      <div class="container">
+        <h2 class="section-title">Stay Updated</h2>
+        <p class="description">Subscribe to our newsletter for the latest updates and offers.</p>
+        <div class="form">
+          <label for="email">
+            <input placeholder="Enter your email" type="email" name="email" id="email">
+          </label>
+          <input type="submit" value="Subscribe"/>
+        </div>
+      </div>
     </section>
 </main>
 

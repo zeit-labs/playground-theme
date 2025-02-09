@@ -24,7 +24,9 @@ $font-family-base: 'Poppins', sans-serif;
 // Introducing new variables
 
 $dark: #111827;
+$black:#111827;
 $light-dark: #374151;
+$light-grey: #cecece;
 $big-screen: 1200px;
 
 
@@ -41,7 +43,7 @@ $light-overlay-d: #36383B;
 $danger-d: #FFA07A;
 $success-d: #54CF5E;
 $btn-color-d: #112F6B;
-$body-bg-d:#0D0D0E;
+$body-bg-d:rgb(7, 12, 20);
 
 $warning-400: #ffe340;
 $page-color-transition: transparent .2s ease, color .2s ease;
