@@ -26,8 +26,7 @@ header.global-header {
             margin: 15px 0 15px 35px;
             height: auto;
             @include media-breakpoint-up(lg) {
-                margin: 0;
-                margin: 20px 0 0;
+                margin: 10px 0 0;
             }
             .logo {
                 height: 40px;
