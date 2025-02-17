@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-body, .text-monospace {
-  font-family: 'Poppins', sans-serif !important;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+:root {
+  --font-family-base: 'Inter', Arial, sans-serif;
 }
+
+body {
+  font-family: var(--font-family-base);
+}
+
