@@ -28,7 +28,7 @@ config: t.Dict[str, t.Dict[str, t.Any]] = {
         # tutor config save --set INDIGO_FOOTER_NAV_LINKS=[]
         "FOOTER_NAV_LINKS": [
             {"title": "Twitter","icon":"https://framerusercontent.com/images/1DbJF0SfnQ9zXbkklF5ahXsA3E.svg", "url": "https://x.com/zeitlabshq"},
-            {"title": "Instagram","icon":"https://framerusercontent.com/images/ywXPggRz1sA205mpu4DgptHmGkg.svg", "url": "https://www.instagram.com/"},
+            # {"title": "Instagram","icon":"https://framerusercontent.com/images/ywXPggRz1sA205mpu4DgptHmGkg.svg", "url": "https://www.instagram.com/"},
             {"title": "LinkedIn","icon":"https://framerusercontent.com/images/AKICGggo8HHzKzhGGi2gPugc.png", "url": "https://www.linkedin.com/company/zeitlabs-elearning/"},
             # {"title": "Terms of Service", "url": "/tos"},
             # {"title": "Privacy Policy", "url": "/privacy"},
