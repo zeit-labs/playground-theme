@@ -333,16 +333,18 @@ section {
   }
 }
 
-// .courses-listing-item {
-//   opacity: 0;
-//   transform: translateY(20px);
-//   transition: transform 0.5s ease, opacity 0.5s ease;
-// }
+.courses-listing-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
 
-// .courses-listing-item.animate {
-//   opacity: 1;
-//   transform: translateY(0);
-// }
+.courses-listing-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 
 
 body.indigo-dark-theme {
