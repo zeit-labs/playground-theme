@@ -17,7 +17,7 @@ footer.tutor-container {
     }
     .footer-info {
       padding: 60px 15px;
-      background-color: rgb(20, 22, 30);
+      background-color: transparent;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -63,30 +63,33 @@ footer.tutor-container {
         margin: 0;
         padding: 0;
         letter-spacing: -.3em;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        position: relative;
+        &:after {
+          content: "";
+          width: 1px;
+          height: 29px;
+          background: #515661;
+          order: 0;
+        }
         li {
             display: inline-block;
             vertical-align: middle;
-            padding: 0 5px;
+            padding: 0;
             letter-spacing: normal;
             position: relative;
             font-size: 12px;
             line-height: 18px;
             color: $light-grey;
             &:first-child {
-                padding-left: 0;
+                order: 1;
             }
-            &:last-child {
-                padding-left: 20px;
-                &:after {
-                    position: absolute;
-                    left: 5px;
-                    top: 50%;
-                    content: "";
-                    width: 1px;
-                    height: 29px;
-                    margin: -14px 0 0;
-                    background: #515661;;
-                }
+            img.logo {
+              filter: invert(1);
+              width:150px;
+              max-width: 100%;
             }
         }
     }
