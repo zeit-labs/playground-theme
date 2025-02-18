@@ -64,6 +64,6 @@ function thelabInit() {
     $(document).ready(function() {
         init();
     });
-};
+}
 
 thelabInit();
