@@ -59,8 +59,8 @@ from openedx.core.djangolib.markup import HTML, Text
       <h2 class="section-title">Frequently Asked Questions</h2>
       <div id="faq-container">
         <div class="faq-item">
-          <h3 class="faq-question">What is Zeit Labs?</h3>
-          <p class="faq-answer">Zeit Labs is an online platform offering flexible and scalable learning solutions.</p>
+          <h3 class="faq-question">What is zeitlabs?</h3>
+          <p class="faq-answer">zeitlabs is an online platform offering flexible and scalable learning solutions.</p>
         </div>
         <div class="faq-item">
           <h3 class="faq-question">How can I enroll in a course?</h3>
@@ -85,6 +85,7 @@ from openedx.core.djangolib.markup import HTML, Text
 <!--        </div>-->
 <!--      </div>-->
 <!--    </section>-->
+
 </main>
 
 % if show_homepage_promo_video:
@@ -103,7 +104,69 @@ from openedx.core.djangolib.markup import HTML, Text
          }
       })
    </script>
+   <script type="text/javascript">
+    $(document).ready(function () {
+      function animateCourseCards() {
+        let animated = false;
+
+        function isInViewport($element) {
+          let elementTop = $element.offset().top;
+          let elementBottom = elementTop + $element.outerHeight();
+
+          let viewportTop = $(window).scrollTop();
+          let viewportBottom = viewportTop + $(window).height();
+
+          // Calculate how much of the element is visible.
+          let visiblePart = Math.max(0, Math.min(elementBottom, viewportBottom) - Math.max(elementTop, viewportTop));
+          let elementHeight = $element.outerHeight();
+
+          // Check if the visible portion is at least 30% of the element's height.
+          return (visiblePart / elementHeight) >= 0.3;
+        }
+
+        function checkAnimation() {
+          const $section = $('.section-courses');
+          if (!animated && $section.length && isInViewport($section)) {
+            animated = true;
+            $('.courses-listing-item').each(function(index) {
+              const $card = $(this);
+              setTimeout(function(){
+                $card.addClass('animate');
+              }, index * 300);
+            });
+          }
+        }
+
+        // Bind the scroll event and check on page load
+        $(window).on('scroll', checkAnimation);
+        checkAnimation();
+      }
+
+      function handleFAQSection() {
+        $(".faq-answer").hide();
+
+        $(".faq-item").click(function () {
+          const answer = $(this).find(".faq-answer");
+          answer.slideToggle();
+          $(this).toggleClass("open");
+        });
+      }
+
+      function init() {
+        $(".heading-group > *").wrap("<div class='text-wrapper'></div>")
+        setTimeout(()=> {
+        $(".text-wrapper > *").addClass("show")
+        }, 500);
+
+        handleFAQSection()
+        animateCourseCards()
+      }
+
+      init();
+    });
+    </script>
 </%block>
+
 
 % if show_signup_immediately is not UNDEFINED:
   ## NOTE: This won't work in production, because anonymous views are cached, so it will

@@ -5,7 +5,7 @@ body, .text-monospace, * {
 .wrapper-footer {
     border-top: 1px solid #E5E7EB;
     padding: 0;
-    background: $body-bg-d;
+    background-color: #14161e;
 }
 footer.tutor-container {
     margin: 0 auto;
@@ -49,6 +49,7 @@ footer.tutor-container {
             content: unset;
         }
         .powered-area {
+            opacity: 0;
             margin: 0 0 10px;
             @include media-breakpoint-up(md) {
                 margin: 0 0 15px;

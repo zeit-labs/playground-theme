@@ -8,6 +8,12 @@ section.home {
     margin: 0 auto;
 }
 
+.home {
+  .course-search {
+    display: none;
+  }
+}
+
 section.home.style-logout {
   min-height: calc(100vh - 64px);
   background-image: url('https://framerusercontent.com/images/wSzvTT1ZyGcTOhxUVQOg97dmudM.png?scale-down-to=4096');
