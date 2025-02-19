@@ -144,6 +144,9 @@
                             }
                         }
                         .course-date {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
                             border-top: 1px solid #ECF0F4;
                             padding: 10px 20px;
                             margin: 0 -20px;
@@ -152,7 +155,6 @@
                             line-height: 20px;
                             svg {
                                 display: inline-block;
-                                margin: -4px 10px 0 0;
                                 vertical-align: middle;
                             }
                         }
