@@ -13,7 +13,7 @@ from .__about__ import __version__
 if __version_suffix__:
     __version__ += "-" + __version_suffix__
 
-BRAND_PACKAGE = '@edx/brand@git+https://github.com/zeit-labs/brand-openedx.git#c97dc1f6f8e77d5b5058f716b06bd02006607cdf'
+BRAND_PACKAGE = '@edx/brand@git+https://github.com/zeit-labs/brand-openedx.git#9f5657c'
 
 ################# Configuration
 config: t.Dict[str, t.Dict[str, t.Any]] = {
