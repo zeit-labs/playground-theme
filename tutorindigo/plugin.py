@@ -13,7 +13,9 @@ from .__about__ import __version__
 if __version_suffix__:
     __version__ += "-" + __version_suffix__
 
-BRAND_PACKAGE = '@edx/brand@git+https://github.com/zeit-labs/brand-openedx.git#564b3ea'
+BRAND_PACKAGE_VERSION = '564b3ea'
+BRAND_PACKAGE_O = f'@edx/brand@git+https://github.com/zeit-labs/brand-openedx.git#{BRAND_PACKAGE_VERSION}'
+BRAND_PACKAGE_Z = f'brand-openedx-zeit@git+https://github.com/zeit-labs/brand-openedx.git#{BRAND_PACKAGE_VERSION}'
 
 ################# Configuration
 config: t.Dict[str, t.Dict[str, t.Any]] = {
@@ -111,7 +113,8 @@ hooks.Filters.ENV_PATCHES.add_items(
         (
             "mfe-dockerfile-post-npm-install-learning",
             f"""
-RUN npm install '{BRAND_PACKAGE}'
+RUN npm install '{BRAND_PACKAGE_O}'
+RUN npm install '{BRAND_PACKAGE_Z}'
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.1.3'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 
@@ -121,7 +124,8 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-authn",
             f"""
-RUN npm install '{BRAND_PACKAGE}'
+RUN npm install '{BRAND_PACKAGE_O}'
+RUN npm install '{BRAND_PACKAGE_Z}'
 """,
         ),
         # Tutor-Indigo v2.1 targets the styling updates in discussions and learner-dashboard MFE
@@ -129,7 +133,8 @@ RUN npm install '{BRAND_PACKAGE}'
         (
             "mfe-dockerfile-post-npm-install-discussions",
             f"""
-RUN npm install '{BRAND_PACKAGE}'
+RUN npm install '{BRAND_PACKAGE_O}'
+RUN npm install '{BRAND_PACKAGE_Z}'
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.1.3'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 
@@ -139,7 +144,8 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-learner-dashboard",
             f"""
-RUN npm install '{BRAND_PACKAGE}'
+RUN npm install '{BRAND_PACKAGE_O}'
+RUN npm install '{BRAND_PACKAGE_Z}'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 
 COPY indigo/env.config.jsx /openedx/app/
@@ -148,7 +154,8 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-profile",
             f"""
-RUN npm install '{BRAND_PACKAGE}'
+RUN npm install '{BRAND_PACKAGE_O}'
+RUN npm install '{BRAND_PACKAGE_Z}'
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.1.3'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 
@@ -158,7 +165,8 @@ COPY indigo/env.config.jsx /openedx/app/
         (
             "mfe-dockerfile-post-npm-install-account",
             f"""
-RUN npm install '{BRAND_PACKAGE}'
+RUN npm install '{BRAND_PACKAGE_O}'
+RUN npm install '{BRAND_PACKAGE_Z}'
 RUN npm install '@edx/frontend-component-header@npm:@edly-io/indigo-frontend-component-header@^3.1.3'
 RUN npm install @edly-io/indigo-frontend-component-footer@^2.0.0
 
