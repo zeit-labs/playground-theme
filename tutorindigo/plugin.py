@@ -13,7 +13,7 @@ from .__about__ import __version__
 if __version_suffix__:
     __version__ += "-" + __version_suffix__
 
-BRAND_PACKAGE_VERSION = '564b3ea'
+BRAND_PACKAGE_VERSION = '01fc01b'
 BRAND_PACKAGE_O = f'@edx/brand@git+https://github.com/zeit-labs/brand-openedx.git#{BRAND_PACKAGE_VERSION}'
 BRAND_PACKAGE_Z = f'brand-openedx-zeit@git+https://github.com/zeit-labs/brand-openedx.git#{BRAND_PACKAGE_VERSION}'
 
